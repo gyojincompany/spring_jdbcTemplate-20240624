@@ -56,4 +56,13 @@ public class BoardDao {
 		return boardDtos;
 	}
 	
+	public BoardDto content_view(String boardNum) {
+		
+		String sql = "SELECT * FROM springboard WHERE bnum=" + boardNum;
+		
+		BoardDto boardDto = this.template.queryForObject(sql, new BeanPropertyRowMapper(BoardDto.class));
+		
+		return boardDto;
+	}
+	
 }
