@@ -9,6 +9,8 @@
 <body>
 	<h2>글 내용 보기</h2>
 	<hr>
+	<form action="modifyOk">
+	<input type="hidden" name="bnum" value="${boardDto.bnum}">
 	<table border="1" cellspacing="0" cellpadding="0" width="600">
 		<tr>
 			<td width="100">글번호</td>
@@ -24,11 +26,13 @@
 		</tr>
 		<tr>
 			<td>글제목</td>
-			<td>${boardDto.btitle}</td>
+			<td><input type="text" name="btitle" value="${boardDto.btitle}" size="60"></td>
 		</tr>
 		<tr>
-			<td height="300" valign="top">글내용</td>
-			<td valign="top">${boardDto.bcontent}</td>
+			<td height="200" valign="top">글내용</td>
+			<td valign="top">
+				<textarea rows="15" cols="45" name="bcontent">${boardDto.bcontent}</textarea>			
+			</td>
 		</tr>
 		<tr>
 			<td>등록일</td>
@@ -36,11 +40,11 @@
 		</tr>
 		<tr>
 			<td colspan="2">
-				<input type="button" value="수정" onclick="javascript:window.location.href='modify?bnum=${boardDto.bnum}'">
-				<input type="button" value="삭제">
-				<input type="button" value="목록" onclick="javascript:window.location.href='list'">
+				<input type="submit" value="완료">				
+				<input type="button" value="취소" onclick="javascript:history.go(-1)">
 			</td>
 		</tr>
 	</table>
+	</form>
 </body>
 </html>
