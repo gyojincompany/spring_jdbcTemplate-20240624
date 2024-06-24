@@ -2,6 +2,7 @@ package com.gyojincompany.board.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,6 +19,7 @@ public class BoardController {
 	
 	private JdbcTemplate template;	
 	
+	@Autowired
 	public void setTemplate(JdbcTemplate template) {
 		this.template = template;
 		Constant.template = this.template;
