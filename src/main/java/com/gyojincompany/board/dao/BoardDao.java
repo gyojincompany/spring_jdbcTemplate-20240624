@@ -83,4 +83,8 @@ public class BoardDao {
 		
 	}
 	
+	public void delete() {//글 삭제 메소드
+		
+	}
+	
 }
