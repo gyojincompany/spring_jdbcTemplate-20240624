@@ -59,6 +59,8 @@ public class BoardDao {
 	
 	public BoardDto content_view(String boardNum) {
 		
+		uphit(boardNum);
+		
 		String sql = "SELECT * FROM springboard WHERE bnum=" + boardNum;
 		
 		BoardDto boardDto = this.template.queryForObject(sql, new BeanPropertyRowMapper(BoardDto.class));
@@ -97,6 +99,20 @@ public class BoardDao {
 		});
 		
 		
+	}
+	
+	public void uphit(final String bnum) {//조회수 증가 메소드
+		
+		String sql = "UPDATE springboard SET bhit=bhit+1 WHERE bnum=?";
+		
+		this.template.update(sql, new PreparedStatementSetter() {
+			
+			@Override
+			public void setValues(PreparedStatement ps) throws SQLException {
+				// TODO Auto-generated method stub				
+				ps.setString(1, bnum);
+			}
+		});
 	}
 	
 }
