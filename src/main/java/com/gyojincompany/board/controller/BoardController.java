@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.gyojincompany.board.command.BCommand;
 import com.gyojincompany.board.command.BContentViewCommand;
+import com.gyojincompany.board.command.BDeleteCommand;
 import com.gyojincompany.board.command.BListCommand;
 import com.gyojincompany.board.command.BModifyCommand;
 import com.gyojincompany.board.command.BWriteCommand;
@@ -87,5 +88,21 @@ public class BoardController {
 		
 		return "redirect:list";
 	}
+	
+	@RequestMapping(value = "/delete")
+	public String delete(HttpServletRequest request, Model model) {
+		
+		model.addAttribute("request", request);
+		
+		command = new BDeleteCommand();
+		command.execute(model);		
+		
+		return "redirect:list";
+	}
+	
+	
+	
+	
+	
 	
 }

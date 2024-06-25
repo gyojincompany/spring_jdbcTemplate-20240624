@@ -37,7 +37,7 @@
 		<tr>
 			<td colspan="2">
 				<input type="button" value="수정" onclick="javascript:window.location.href='modify?bnum=${boardDto.bnum}'">
-				<input type="button" value="삭제">
+				<input type="button" value="삭제" onclick="javascript:window.location.href='delete?bnum=${boardDto.bnum}'">
 				<input type="button" value="목록" onclick="javascript:window.location.href='list'">
 			</td>
 		</tr>

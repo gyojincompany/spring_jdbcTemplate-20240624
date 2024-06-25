@@ -83,7 +83,19 @@ public class BoardDao {
 		
 	}
 	
-	public void delete() {//글 삭제 메소드
+	public void delete(final String bnum) {//글 삭제 메소드
+		
+		String sql = "DELETE FROM springboard WHERE bnum=?";
+		
+		this.template.update(sql, new PreparedStatementSetter() {
+			
+			@Override
+			public void setValues(PreparedStatement ps) throws SQLException {
+				// TODO Auto-generated method stub				
+				ps.setString(1, bnum);
+			}
+		});
+		
 		
 	}
 	
