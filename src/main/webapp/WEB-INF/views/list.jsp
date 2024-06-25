@@ -30,6 +30,11 @@
 		</tr>
 		</c:forEach>
 		
+		<tr>
+			<td colspan="5">
+				<input type="button" value="글쓰기" onclick="javascript:window.location.href='write'">
+			</td>
+		</tr>
 	</table>
 	
 </body>
